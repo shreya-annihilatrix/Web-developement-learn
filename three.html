@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEARNING DEV</title>
+</head>
+<body style="background-color: aqua; color: black;">
+    <ul class="language">
+        <li>JAVASCRIPT</li>
+    </ul>
+                           
+</body>
+<script>
+    //this traverses the entire tree n then adds them
+    function addnewlang(langname){
+        const li=document.createElement("li");
+        li.textContent=`${langname}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addnewlang("HTML");
+    addnewlang("CSS");
+    //it does not traverse the entire tree, it just adds the element
+    function optiaddlang(langname){
+        const li=document.createElement("li")
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector('.language').appendChild(li);    
+    }
+    optiaddlang("PYTHON");
+    optiaddlang("JAVA");
+    //EDIT
+    const secondlang=document.querySelector("li:nth-child(2)")
+    const newli=document.createElement('li')
+     newli.textContent="GOLANG"
+    secondlang.replaceWith(newli)
+    // const firstlang=document.querySelector('li:first-child')
+    // firstlang.outerHTML='<li>TYPESCRIPT</li>'
+    //REMOVE
+    // const lastlang=document.querySelector('li:last-child')
+    // lastlang.remove()
+</script>
+</html>
